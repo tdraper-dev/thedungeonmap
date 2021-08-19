@@ -1,0 +1,14 @@
+POST http://localhost:3001/api/icons
+Content-Type: application/json
+
+{
+  "content": "Travis Test Icon",
+  "boardId": "60fb03810b2d4f1990fab427",
+  "position": {
+    "x": "30.1853%",
+    "y": "22.6384%"
+  }
+}
+
+###
+DELETE http://localhost:3001/api/icons/60fde0be5a8ef7aa5c03f3b5

@@ -1,0 +1,15 @@
+GET http://localhost:3001/api/gameboards
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRyYXZpcyBEcmFwZXIiLCJpZCI6IjYwZjRhNzhkMjAyMmMxNzg3ODA2YmU0MyIsImlhdCI6MTYyNjcxNjM3MH0.FD8nHUJZF05i0Z7vSUAo5Izwtu1MfNaRJBm74sACmH4
+
+###
+POST http://localhost:3001/api/gameboards
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRlc3NhIFlvdW5nIiwiaWQiOiI2MGY0YTc5NDIwMjJjMTc4NzgwNmJlNDUiLCJpYXQiOjE2MjY3MTg2NjB9.ycmlAT6z1JzXR4rxs7Uj2DrnReWb0gbQHc1kkG0t7OE
+
+{
+  "board": "Tessa Test Board 3"
+}
+
+###
+DELETE http://localhost:3001/api/gameboards/60f5bc977ac11b6cf448282c
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRyYXZpcyBEcmFwZXIiLCJpZCI6IjYwZjRhNzhkMjAyMmMxNzg3ODA2YmU0MyIsImlhdCI6MTYyNjcxNjM3MH0.FD8nHUJZF05i0Z7vSUAo5Izwtu1MfNaRJBm74sACmH4
