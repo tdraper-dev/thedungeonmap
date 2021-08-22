@@ -1,5 +1,7 @@
 const config = require('./utils/config')
 const express = require('express')
+const helmet = require('helmet')
+const mongoSanitize = require('express-mongo-sanitize')
 const path = require('path');
 const app = express()
 require('express-async-errors')
@@ -31,15 +33,17 @@ mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology
     logger.error('error connecting to MongoDB:', error.message)
   })
 
-app.use((req, res, next) => {
-  req.io = io
-  next()
-})
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 const rootRouter = express.Router()
 
 app.use(cors())
+
 app.use(express.json())
+app.use(mongoSanitize())
+app.use(helmet())
+
 app.use(middleware.requestLogger)
 app.use(middleware.tokenExtractor)
 const buildPath = path.normalize(path.join(__dirname, 'build'))

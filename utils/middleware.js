@@ -1,9 +1,30 @@
 const logger = require('./logger')
 const jwt = require('jsonwebtoken')
 const User = require('../models/User')
-
+const mongoSanitize = require('express-mongo-sanitize')
+/*
+validate: {
+  validator: function(username) {
+    /*const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#x27;',
+      "/": '&#x2F;',
+      '`': '&grave;'
+    };
+    const reg = /[&<>"'/`]/ig;
+    const newUser = username.replace(reg, (match)=>(map[match]));
+    return /[a-zA-Z0-9_]/.test(newUser)
+    console.log('YO WHATUP')
+    console.log(mongoSanitize.has(username))
+    return !mongoSanitize.has(username)
+  }
+  */
 
 const requestLogger = (request, response, next) => {
+  console.log('This is bad!', mongoSanitize.has(request.body))
   logger.info('Method:', request.method)
   logger.info('Path:  ', request.path)
   logger.info('Body:  ', request.body)

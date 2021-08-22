@@ -3,6 +3,12 @@ const mongoose = require('mongoose')
 const gameBoardSchema = new mongoose.Schema({
   board : {
     type: String,
+    validate: {
+      validator: function(name) {
+        const check = /(\$|{|}|\/|\\|\*|\(|\)\`)+/g.test(name)
+        return check ? false : true
+      }
+    },
     required: true,
     minlength: 1
   },

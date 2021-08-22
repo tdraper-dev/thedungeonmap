@@ -3,6 +3,12 @@ const mongoose = require('mongoose')
 const iconSchema = new mongoose.Schema({
   content: {
     type: String,
+    validate: {
+      validator: function(name) {
+        const check = /(\$|{|}|\/|\\|\*|\(|\)\`)+/g.test(name)
+        return check ? false : true
+      }
+    },
     required: true
   },
   color: String,

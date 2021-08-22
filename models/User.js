@@ -1,10 +1,17 @@
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 
+
 const userSchema = new mongoose.Schema({
   username : {
     type: String,
     required: true,
+    validate: {
+      validator: function(username) {
+        const check = /(\$|{|}|\/|\\|\*|\(|\)\`)+/g.test(username)
+        return check ? false : true
+      }
+    },
     unique: true,
     minlength: 5
   },
