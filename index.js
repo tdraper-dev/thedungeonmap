@@ -42,7 +42,9 @@ app.use(cors())
 
 app.use(express.json())
 app.use(mongoSanitize())
-app.use(helmet())
+app.use(helmet({
+  contentSecurityPolicy: false,
+}))
 
 app.use(middleware.requestLogger)
 app.use(middleware.tokenExtractor)
