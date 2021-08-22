@@ -53,7 +53,7 @@ app.use(  helmet.contentSecurityPolicy({
     fontSrc: ["'self'"],
     imgSrc: ["'self'"],
   }
-})
+}))
 
 app.use(middleware.requestLogger)
 app.use(middleware.tokenExtractor)
