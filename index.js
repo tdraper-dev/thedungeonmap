@@ -42,18 +42,7 @@ app.use(cors())
 
 app.use(express.json())
 app.use(mongoSanitize())
-app.use(  helmet.contentSecurityPolicy({
-  directives: {
-    defaultSrc: ["'self'"],
-    connectSrc: ["'self'"],
-    frameSrc: ["'self'"],
-    // childSrc: ["'self'", 'https://js.stripe.com'],
-    scriptSrc: ["'self'"],
-    styleSrc: ["'self'"],
-    fontSrc: ["'self'"],
-    imgSrc: ["'self'"],
-  }
-}))
+app.use(helmet())
 
 app.use(middleware.requestLogger)
 app.use(middleware.tokenExtractor)
