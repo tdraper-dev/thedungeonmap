@@ -12,6 +12,7 @@ gameBoardRouter.get('/', middleware.userExtractor, async (request, response) => 
     if(request.user){
       gameBoards = await Gameboard.find({user: request.user._id}, {
         board: 1,
+        boardPath: 1,
         date: 1,
         user: 1,
         dashImage: 1,
@@ -23,8 +24,9 @@ gameBoardRouter.get('/', middleware.userExtractor, async (request, response) => 
 })
 
 gameBoardRouter.get('/:id', async(request, response) => {
-  const gameBoard = await Gameboard.findById(request.params.id, {
+  const gameBoard = await Gameboard.findOne({ boardPath: request.params.id }, {
     board: 1,
+    boardPath: 1,
     user: 1,
     icons: 1,
     image: 1
@@ -37,10 +39,11 @@ gameBoardRouter.post('/', middleware.userExtractor, multer({storage: multer.memo
   const file = request.file
   const boardName = request.body.title
   const imageBuffers = await helperFunctions.imageProcessing(file)
+  const randomInt = (Math.floor(100000 + Math.random() * 900000));
 
-  console.log('TYPE OF USER ID', typeof request.user._id)
   const newGameBoard = new Gameboard({
     board: boardName,
+    boardPath: `${boardName.replace(/ /g, "_")}-${randomInt}`,
     date: new Date(),
     user: request.user._id,
     image: imageBuffers.img,
@@ -54,6 +57,7 @@ gameBoardRouter.post('/', middleware.userExtractor, multer({storage: multer.memo
 
   const boardPkg = {
     board: savedBoard.board,
+    boardPath: savedBoard.boardPath,
     user: savedBoard.user,
     icons: savedBoard.icons,
     dashImage: savedBoard.dashImage,
@@ -68,7 +72,7 @@ gameBoardRouter.put('/:id', multer({storage: multer.memoryStorage()}).single("my
   try {
     const file = request.file;
     const builtImage = await helperFunctions.imageProcessing(file);
-    await Gameboard.findByIdAndUpdate(request.params.id,{
+    await Gameboard.findOneAndUpdate({ boardPath: request.params.id },{
       image: builtImage.img,
       dashImage: builtImage.dashBuffer,
       thumbnail: builtImage.thumbnail
@@ -84,14 +88,14 @@ gameBoardRouter.delete('/:id', middleware.userExtractor, async(request, response
   let boardToDelete;
 
   const boardsToKeep = boards.filter( board => {
-    if(board._id.toString() === request.params.id) { 
+    if(board.boardPath === request.params.id) { 
       boardToDelete = board 
     }
     return board._id.toString() !== request.params.id
   })
 
   if (boardToDelete.user.toString() === request.user._id.toString()) {
-    await Gameboard.deleteOne( {_id: request.params.id} )
+    await Gameboard.deleteOne( {boardPath: request.params.id} )
     await Icon.deleteMany({ gameBoard: boardToDelete._id })
 
     const user = await User.findById(request.user._id)

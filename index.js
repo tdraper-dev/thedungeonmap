@@ -66,20 +66,21 @@ app.use(rootRouter)
 app.use(middleware.errorHandler)
 
 function socketManager(socket){
+
   let socketRoom;
   let user;
   console.log('YOU"VE CONNECTED')
 
-  socket.on('join', ({boardId, username='User'}) => {
+  socket.on('join', ({boardId, username}) => {
     console.log('Joining room: ', boardId)
     socket.join(boardId)
     
     socketRoom=boardId;
-    user = username;
-
+    user = username || 'User';
+   
     socket.to(boardId).emit('receive_message', {
       id: Math.random(),
-      content: `${username} has joined the game`,
+      content: `${user} has joined the game`,
       systemMsg: true
     })
   })
@@ -93,6 +94,14 @@ function socketManager(socket){
       socket.emit('guestCheck', false)
     }
     
+  })
+
+  socket.on('guestQuick', (boardId) => {
+    if(io.of('/').adapter.rooms.has(boardId)) {
+      socket.emit('guestCheckQuick', true)
+    } else {
+      socket.emit('guestCheckQuick', false)
+    }
   })
 
   socket.on('create_icon', (data) => {

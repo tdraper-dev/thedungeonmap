@@ -12,6 +12,15 @@ const gameBoardSchema = new mongoose.Schema({
     required: true,
     minlength: 1
   },
+  boardPath: {
+    type: String,
+    validate: {
+      validator: function(name) {
+        const check = /(\$|{|}|\/|\\|\*|\(|\)\`)+/g.test(name)
+        return check ? false : true
+      }
+    },
+  },
   date: {
     type: Date,
     required: true,
