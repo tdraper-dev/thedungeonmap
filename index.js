@@ -89,9 +89,12 @@ function socketManager(socket){
     console.log('Guest wants to join room: ', room);
 
     if(io.of('/').adapter.rooms.has(room)) {
+      console.log('guest check TRUE')
       socket.emit('guestCheck', true)
     } else {
+      console.log('guest check False')
       socket.emit('guestCheck', false)
+      socket.disconnect()
     }
     
   })

@@ -16,8 +16,7 @@ iconRouter.get('/:id', async(request, response) => {
 
 iconRouter.post('/', async(request, response) => {
   const body = request.body
-  console.log('LET US CHECK OUT THIS BODY: ', body)
-  const gameBoard = await Gameboard.findById(body.boardId)
+  const gameBoard = await Gameboard.findOne({ boardPath: body.boardId })
 
   const newIcon = new Icon({
     content: body.content,
@@ -28,7 +27,7 @@ iconRouter.post('/', async(request, response) => {
       y: '0%'
     }
   })
-  console.log('NEWICON', newIcon)
+  
   const savedIcon = await newIcon.save()
   gameBoard.icons = gameBoard.icons.concat(savedIcon._id)
   await gameBoard.save()
