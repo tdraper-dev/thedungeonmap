@@ -73,10 +73,11 @@ function socketManager(socket){
 
   socket.on('join', ({boardId, username}) => {
     console.log('Joining room: ', boardId)
+    console.log('username: ', username)
     socket.join(boardId)
     
     socketRoom=boardId;
-    user = username || 'User';
+    user = username;
    
     socket.to(boardId).emit('receive_message', {
       id: Math.random(),
