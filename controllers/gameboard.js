@@ -36,6 +36,7 @@ gameBoardRouter.get('/:id', async(request, response) => {
 
 gameBoardRouter.post('/', middleware.userExtractor, multer({storage: multer.memoryStorage()}).single("myImage"), async(request, response) => {
   const file = request.file 
+  console.log(file)
   const boardName = request.body.title
   const imageBuffers = await helperFunctions.imageProcessing(file)
   const randomInt = (Math.floor(100000 + Math.random() * 900000));
