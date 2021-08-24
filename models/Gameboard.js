@@ -7,7 +7,7 @@ const gameBoardSchema = new mongoose.Schema({
       validator: function(name) {
         const check = /(\$|{|}|\/|\\|\*|\(|\)\`)+/g.test(name)
         return check ? false : true
-      }
+      } 
     },
     required: true,
     minlength: 1
