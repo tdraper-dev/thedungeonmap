@@ -6,7 +6,6 @@ const User = require('../models/User')
 const multer = require('multer')
 const helperFunctions = require('../utils/helperFunctions')
 
-
 gameBoardRouter.get('/', middleware.userExtractor, async (request, response) => {
   let gameBoards = [];
     if(request.user){
@@ -36,7 +35,7 @@ gameBoardRouter.get('/:id', async(request, response) => {
 })
 
 gameBoardRouter.post('/', middleware.userExtractor, multer({storage: multer.memoryStorage()}).single("myImage"), async(request, response) => {
-  const file = request.file
+  const file = request.file 
   const boardName = request.body.title
   const imageBuffers = await helperFunctions.imageProcessing(file)
   const randomInt = (Math.floor(100000 + Math.random() * 900000));
@@ -67,6 +66,7 @@ gameBoardRouter.post('/', middleware.userExtractor, multer({storage: multer.memo
 
   response.json(boardPkg)
 })
+
 
 gameBoardRouter.put('/:id', multer({storage: multer.memoryStorage()}).single("myImage"), async(request, response) => {
   try {

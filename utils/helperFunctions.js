@@ -1,7 +1,6 @@
 const Image = require('../models/Image')
 const sharp = require('sharp')
 const Gameboard = require('../models/Gameboard')
-const helperfunctions = require('../utils/helperFunctions')
 
 
 const imageResizer = async (bufferArray, ratio) => {
