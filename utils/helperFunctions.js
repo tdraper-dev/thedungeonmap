@@ -44,7 +44,7 @@ const imageProcessing = async(file) => {
       return newImage
     }
   } catch (exception) {
-    console.log(exception)
+    throw new Error( 'not supported format!' )
   }
 }
 

@@ -79,8 +79,9 @@ gameBoardRouter.put('/:id', multer({storage: multer.memoryStorage()}).single("my
       thumbnail: builtImage.thumbnail
     })
     response.json(builtImage.img)
-  } catch(exception) {
-    console.log('FAILURE IN UPDATING IMAGE', exception)
+  } catch(error) {
+    console.log(error.message)
+    response.status(400).json({error: error.message})
   }
 })
 
