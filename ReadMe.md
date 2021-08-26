@@ -48,7 +48,7 @@
   <br/>
 <br/>
 <h2 id="usage" style="font-size: 40px">Usage</h2>
-In order to access and use the app, visit <a href="https://thedungeonmap.herokuapp.com" target="_blank" rel="noreferrer" title="Link to Dungeon Map! by Travis Draper">https://www.thedungeonmap.herokuapp.com</a>.
+In order to access and use the app, visit <a href="https://thedungeonmap.herokuapp.com" target="_blank" rel="noreferrer" title="Link to Dungeon Map! by Travis Draper">https://thedungeonmap.herokuapp.com</a>.
 <br/>
 <br/>
 <p id="createDungeonMaster" style="font-size: 17px; background-color: rgba(46, 49, 49, 1); width: fit-content">To Create Dungeon Master Account:</p>
@@ -61,6 +61,7 @@ In order to access and use the app, visit <a href="https://thedungeonmap.herokua
 Your <span style="font-size: 17px"><strong>dashboard</strong></span> is home to your various gameboards. Here you can:
 <ul>
   <li>Create new gameboards</li>
+</ul>
   <ol>
     <li>Click the "Create" button in the top left corner of your dashboard screen.</li>
     <li>Input a name for your gameboard so that you can easily recognize it.</li>
