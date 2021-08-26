@@ -185,7 +185,7 @@ Your <span style="font-size: 17px"><strong>gameboard table</strong></span> is wh
   <li>Press Enter to create a local clone.
   <li>Navigate to the root of the project directory.</li>
   <pre><code>$ cd thedungeonmap</code></pre>
-  <li>Run npm install in command line to install project dependencies</li>
+  <li>Run npm install in command line to install project dependencies.</li>
   <pre><code>$ npm install</code></pre>
   <li>Create a .env file.</li>
   <pre><code>$ ni .env</code></pre>
@@ -193,9 +193,12 @@ Your <span style="font-size: 17px"><strong>gameboard table</strong></span> is wh
   <pre><code>
   MONGODB_URI="[YOUR MONGODB_URI HERE]"
   SECRET="[YOUR SECRET KEY HERE]"
+  //To disable inline-script with CSP so that the app doesn't break at deployment
+  INLINE_RUNTIME_CHUNK=false
   </code></pre>
+  <li>Deploy to website hosting service like Heroku, or run locally with npm start.</li>
+  <pre><code>$ npm start</code></pre>
   </ol>
-    <pre><code>This is a code block.</code></pre>
 <br/>
 <br/>
 <h2 id="nextSteps" style="font-size: 40px">Next Steps...</h2>
