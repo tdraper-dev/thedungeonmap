@@ -1,7 +1,7 @@
 <h1 style="font-size: 80px">Dungeon Map!</h1>
 <span>
   <img alt="GitHub" src="https://img.shields.io/github/license/tdraper-dev/thedungeonmap?label=license"> 
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/tdraper-dev/thedungeonmap"> 
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/tdraper-dev/thedungeonmap"> 
   <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/tdraper-dev/thedungeonmap"> 
 </span>
 <h2 style="font-size: 40px">Table of Contents</h2>
