@@ -22,10 +22,6 @@
 
 <a href="#nextSteps" title="Link to Next Steps section"><li style="font-size: 17px">Next Steps...</li></a>
 </ul>
-
-
-  <br/>
-  <br/>
   <h2 id="description" style="font-size: 40px">Description</h2>
   <div>
     The <strong><a href="https://thedungeonmap.herokuapp.com" ref="noreferrer" target="_blank" title="Link to The Dungeon Map, by Travis Draper">Dungeon Map!</a></strong> is an easy to use, drop-in/drop-out gameboard simulator that makes hosting virtual Dungeons and Dragons sessions simpler for the Dungeon Master and players. Unlike pre-existing web applications, such as the popular <strong><a href="https://roll20.net/" ref="noreferrer" target="_blank" title="Link to Roll20 homepage">Roll20</a></strong>, <strong><a href="https://thedungeonmap.herokuapp.com" ref="noreferrer" target="_blank" title="Link to The Dungeon Map, by Travis Draper">Dungeon Map!</a></strong> features a pared-down interface and easy-to-use session hosting functionality, to streamline interactions and eliminate any obstructions between the players and the game.
@@ -52,7 +48,7 @@
   <br/>
 <br/>
 <h2 id="usage" style="font-size: 40px">Usage</h2>
-In order to access and use the app, visit <a href="https://www.thedungeonmap.herokuapp.com" target="_blank" rel="noreferrer" title="Link to Dungeon Map! by Travis Draper">https://www.thedungeonmap.herokuapp.com</a>.
+In order to access and use the app, visit <a href="https://thedungeonmap.herokuapp.com" target="_blank" rel="noreferrer" title="Link to Dungeon Map! by Travis Draper">https://www.thedungeonmap.herokuapp.com</a>.
 <br/>
 <br/>
 <p id="createDungeonMaster" style="font-size: 17px; background-color: rgba(46, 49, 49, 1); width: fit-content">To Create Dungeon Master Account:</p>
