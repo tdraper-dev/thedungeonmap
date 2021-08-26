@@ -15,6 +15,10 @@
 <ul>
 <a href="#createDungeonMaster" title="Link to subsection To Create Dungeon Master Account of Usage"><li>To Create Dungeon Master Account</li></a>
 <a href="#dungeonMaster" title="Link to subsection As Dungeon Master of Usage"><li>As Dungeon Master</li></a>
+<ul>
+<a href="#dashboard"><li>Dashboard</li></a>
+<a href="#gameboard"><li>Gameboard</li></a>
+</ul>
 <a href="#guestPlayer" title="Link to subsection As Guest Player of Usage"><li>As Guest Player</li></a>
 </ul>
 
@@ -58,10 +62,9 @@ In order to access and use the app, visit <a href="https://thedungeonmap.herokua
 </ol>
 <br/>
 <p id="dungeonMaster" style="font-size: 17px; background-color: rgba(46, 49, 49, 1); width: fit-content">As Dungeon Master:</p>
-Your <span style="font-size: 17px"><strong>dashboard</strong></span> is home to your various gameboards. Here you can:
+Your <span id="dashboard" style="font-size: 17px"><strong>dashboard</strong></span> is home to your various gameboards. Here you can:
 <ul>
   <li>Create new gameboards</li>
-</ul>
   <ol>
     <li>Click the "Create" button in the top left corner of your dashboard screen.</li>
     <li>Input a name for your gameboard so that you can easily recognize it.</li>
@@ -87,7 +90,7 @@ Your <span style="font-size: 17px"><strong>dashboard</strong></span> is home to 
   </ol>
 </ul>
 <br/>
-Your <span style="font-size: 17px"><strong>gameboard table</strong></span> is where you and friends will interact with map by creating, moving, and deleting pieces, as well as chat through in-app chat functionality. As Dungeon Master you have sole control of the map image and the creation of player pieces. Furthermore, you have the ability to begin and end game sessions, the status of which will either prevent or allow players to join. Your abilities include:
+Your <span id="gameboard" style="font-size: 17px"><strong>gameboard table</strong></span> is where you and friends will interact with map by creating, moving, and deleting pieces, as well as chat through in-app chat functionality. As Dungeon Master you have sole control of the map image and the creation of player pieces. Furthermore, you have the ability to begin and end game sessions, the status of which will either prevent or allow players to join. Your abilities include:
 <ul>
 <li>Hosting live game sessions</li>
 <ol>
@@ -169,7 +172,7 @@ Your <span style="font-size: 17px"><strong>gameboard table</strong></span> is wh
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><strong>Note:</strong> If you close the web page tab, you will be asked to re-enter a player name upon reentry.</span>
 <br/>
 <br/>
-<p style="font-size: 17px; background-color: rgba(46, 49, 49, 1); width: fit-content">To move pieces, simply click to hold a game piece and release to drop!</p>
+<p style="font-size: 17px; background-color: rgba(46, 49, 49, 1); width: fit-content">To move pieces, simply click to hold and release to drop!</p>
 <br/>
 <br/>
 <h2 id="installation" style="font-size: 40px">Installation</h2>
@@ -199,3 +202,13 @@ Your <span style="font-size: 17px"><strong>gameboard table</strong></span> is wh
 <br/>
 <br/>
 <h2 id="nextSteps" style="font-size: 40px">Next Steps...</h2>
+<div>
+  I would like to see the Dungeon Master toolkit expanded in future releases. I'm interested in adding:
+  <ul>
+  <li>A shadow tool that allows the Dungeon Master to obscure parts of the map from players, while creating a semi-transparent black screen on sections of their own map. I imagine doing so will require use of the < canvas > element layered on top of the map.</li>
+  <li>I think implementing rolling dice would be a fun, useful update as well. I'd love to simulate the d20 roller on <a href="https://www.dndbeyond.com/" title="_blank" rel="noreferrer" title="Link to Beyond20 homepage">Beyond20</a> in my own code at some point, too and perhaps expand it to have multiple dice visuals like the standard white cube as well as DnD dice.</li>
+  <li> Support for player pieces that are SVGs. This will probably be the soonest update, as I don't imagine this requires much retooling other than allowing the players an option to upload SVGs (or choose from defaults) and then dynamically checking the player input in React to determine which element (div or svg) to produce.</li>
+  <li>Ultimately, I'd like to expand this application to be more universal, rather than catering specifically to Dungeons and Dragons sessions. I want to create and load default game options for the "Dungeon Master" to choose from, like card decks, rolling dice, popular board game images, so that Dungeon Map! could be used as a virtual table top board game session, accessible and playable on mobile and desktop devices everywhere for quick drop-in play with friends</li>
+  <li>I want to learn more about efficient image file transfer and storage, as I think my biggest irk with the application right now is the initial load time for a Dashboard with many gameboards. This will require some research. I currently use multer library to transfer files, and the Sharp library to resize them in the backend.</li>
+  </ul>
+</div>
