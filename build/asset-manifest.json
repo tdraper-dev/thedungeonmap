@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.aaae0edb.chunk.css",
+    "main.css": "/static/css/main.b23f4a5c.chunk.css",
     "main.js": "/static/js/main.f1d04191.chunk.js",
     "main.js.map": "/static/js/main.f1d04191.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.44a5adb7.js",
@@ -12,7 +12,7 @@
     "static/js/3.bc9e2883.chunk.js.map": "/static/js/3.bc9e2883.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.455652b6.chunk.css.map": "/static/css/2.455652b6.chunk.css.map",
-    "static/css/main.aaae0edb.chunk.css.map": "/static/css/main.aaae0edb.chunk.css.map",
+    "static/css/main.b23f4a5c.chunk.css.map": "/static/css/main.b23f4a5c.chunk.css.map",
     "static/js/2.d4ca6923.chunk.js.LICENSE.txt": "/static/js/2.d4ca6923.chunk.js.LICENSE.txt",
     "static/media/App.css": "/static/media/woodenBoards.1759c148.jpeg",
     "static/media/wornMap(resized).bf36f319.jpg": "/static/media/wornMap(resized).bf36f319.jpg"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.44a5adb7.js",
     "static/css/2.455652b6.chunk.css",
     "static/js/2.d4ca6923.chunk.js",
-    "static/css/main.aaae0edb.chunk.css",
+    "static/css/main.b23f4a5c.chunk.css",
     "static/js/main.f1d04191.chunk.js"
   ]
 }
